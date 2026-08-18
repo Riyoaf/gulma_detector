@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="Theme.GulmaDetektor" parent="android:Theme.Material.Light.NoActionBar" />
+
+    <style name="Theme.GulmaDetektor.UCrop" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="android:windowFullscreen">true</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+</resources>

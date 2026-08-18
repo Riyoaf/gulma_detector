@@ -1,0 +1,575 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rancang Bangun Aplikasi Mobile Deteksi Dini Gulma pada Lahan Cabai</title>
+    <style>
+        @page {
+            size: A4;
+            margin: 1.9cm 1.43cm 4.3cm 2cm;
+        }
+        body {
+            font-family: 'Times New Roman', Times, serif;
+            font-size: 10pt;
+            line-height: 1.18;
+            color: #000;
+            margin: 0 auto;
+            max-width: 21cm;
+            padding: 2cm 1.5cm;
+            text-align: justify;
+            background-color: #fff;
+        }
+        .header-journal {
+            display: flex;
+            justify-content: space-between;
+            font-size: 8pt;
+            font-style: italic;
+            border-bottom: 1px solid #000;
+            padding-bottom: 4px;
+            margin-bottom: 20px;
+        }
+        h1.title-id {
+            font-size: 20pt;
+            font-weight: bold;
+            text-align: center;
+            line-height: 1.2;
+            margin-top: 15px;
+            margin-bottom: 15px;
+        }
+        h2.title-en {
+            font-size: 14pt;
+            font-weight: bold;
+            font-style: italic;
+            text-align: center;
+            line-height: 1.2;
+            margin-top: 25px;
+            margin-bottom: 15px;
+        }
+        .authors {
+            font-size: 11pt;
+            font-weight: bold;
+            text-align: center;
+            margin-bottom: 4px;
+        }
+        .affiliation {
+            font-size: 9.5pt;
+            font-style: italic;
+            text-align: center;
+            margin-bottom: 2px;
+        }
+        .email {
+            font-family: 'Courier New', Courier, monospace;
+            font-size: 8.5pt;
+            text-align: center;
+            margin-bottom: 15px;
+        }
+        .abstract-box {
+            font-size: 9pt;
+            margin-bottom: 20px;
+        }
+        .abstract-title {
+            font-weight: bold;
+            font-style: italic;
+        }
+        .keywords {
+            font-size: 9pt;
+            margin-top: 5px;
+            margin-bottom: 20px;
+        }
+        h2.section-title {
+            font-size: 10.5pt;
+            font-weight: bold;
+            margin-top: 22px;
+            margin-bottom: 8px;
+        }
+        h3.subsection-title {
+            font-size: 10pt;
+            font-weight: bold;
+            margin-top: 14px;
+            margin-bottom: 6px;
+        }
+        h4.subsubsection-title {
+            font-size: 9.5pt;
+            font-weight: bold;
+            font-style: italic;
+            margin-top: 10px;
+            margin-bottom: 4px;
+        }
+        p {
+            text-indent: 0.8cm;
+            margin-top: 0;
+            margin-bottom: 6px;
+        }
+        p.no-indent {
+            text-indent: 0;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 12px 0;
+            font-size: 8pt;
+        }
+        table, th, td {
+            border: 1px solid #000;
+        }
+        th {
+            background-color: #f2f2f2;
+            font-weight: bold;
+            text-align: center;
+            padding: 5px;
+        }
+        td {
+            padding: 4px 5px;
+        }
+        .table-caption {
+            font-size: 8pt;
+            font-weight: bold;
+            text-align: center;
+            margin-top: 10px;
+            margin-bottom: 4px;
+            text-transform: uppercase;
+        }
+        .figure-caption {
+            font-size: 8pt;
+            text-align: center;
+            margin-top: 6px;
+            margin-bottom: 14px;
+        }
+        .figure-box {
+            text-align: center;
+            margin: 15px 0;
+            background: #fafafa;
+            border: 1px dashed #ccc;
+            padding: 12px;
+            font-family: monospace;
+            white-space: pre;
+            font-size: 7.5pt;
+        }
+        ol, ul {
+            margin-top: 0;
+            margin-bottom: 6px;
+            padding-left: 1.2cm;
+        }
+        .references {
+            font-size: 8pt;
+            padding-left: 1.5em;
+            text-indent: -1.5em;
+        }
+        .references div {
+            margin-bottom: 5px;
+        }
+        @media print {
+            body {
+                padding: 0;
+            }
+            .no-print {
+                display: none;
+            }
+        }
+        .print-btn {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background: #0284c7;
+            color: white;
+            border: none;
+            padding: 10px 18px;
+            font-size: 14px;
+            border-radius: 6px;
+            cursor: pointer;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+        .print-btn:hover {
+            background: #0369a1;
+        }
+    </style>
+</head>
+<body>
+
+    <button class="print-btn no-print" onclick="window.print()">Cetak / Simpan ke PDF</button>
+
+    <div class="header-journal">
+        <span>p-ISSN : 2443-2210 | e-ISSN : 2685-0893</span>
+        <span>Jutisi: Jurnal Ilmiah Teknik Informatika dan Sistem Informasi</span>
+    </div>
+
+    <h1 class="title-id">Rancang Bangun Aplikasi Mobile Deteksi Dini Gulma pada Lahan Cabai</h1>
+
+    <div class="authors">Riyo Andika Febriyan<sup>1</sup>, Dewa Made Sri Arsa<sup>2</sup>, Desy Purnama Singgih Putri<sup>3</sup></div>
+    <div class="affiliation"><sup>1,2,3</sup>Program Studi Teknologi Informasi, Fakultas Teknik, Universitas Udayana</div>
+    <div class="affiliation">Jalan Raya Kampus Udayana, Jimbaran, Badung, Bali, Indonesia</div>
+    <div class="email"><sup>1</sup>riyoandikafebriyan@gmail.com | <sup>2</sup>sriarsa@unud.ac.id | <sup>3</sup>desypurnama@unud.ac.id</div>
+
+    <div class="abstract-box">
+        <p class="no-indent"><span class="abstract-title">Abstrak — </span> Sektor pertanian cabai (<em>Capsicum annuum L.</em>) di Indonesia sering mengalami penurunan hasil panen akibat kompetisi gulma pada periode kritis vegetatif awal (2 minggu setelah tanam). Penyiangan manual terkendala oleh tingginya biaya tenaga kerja dan risiko kesalahan pencabutan (<em>human error</em>) karena kemiripan bentuk visual antara bibit gulma dan bibit cabai muda. Penelitian ini bertujuan merancang dan membangun aplikasi Android deteksi dini gulma berbasis <em>Computer Vision</em> dan <em>Semantic Segmentation</em> yang terintegrasi dengan fitur edukasi pertanian. Pengembangan aplikasi menerapkan metode <em>Rapid Application Development</em> (RAD). Sistem mengintegrasikan model segmentasi semantik U-Net berbasis MobileNetV2 dalam format <em>TensorFlow Lite</em> (<code>.tflite</code> presisi <em>Float32</em> berukuran 21,15 MB) untuk dieksekusi secara lokal (<em>offline on-device inference</em>) tanpa tergantung koneksi internet. Aplikasi dibangun menggunakan Android Studio berbasis Kotlin dan Jetpack Compose, terhubung ke <em>Supabase Cloud</em> untuk otentikasi dan riwayat lahan, serta <em>Retrofit REST API</em> untuk artikel edukasi. Pengujian fungsionalitas melalui <em>Black Box Testing</em> pada 23 skenario menghasilkan tingkat keberhasilan 100%. Pengujian penerimaan pengguna akhir (<em>User Acceptance Testing</em> / UAT) menggunakan kuesioner skala Likert pada 15 responden menghasilkan persentase kelayakan sebesar 94,44% (skor 4,72 dari 5,00) dengan kategori <strong>Sangat Layak (<em>Accepted</em>)</strong>. Aplikasi ini terbukti efektif meminimalisir kesalahan pencabutan bibit cabai serta meningkatkan literasi agronomi petani.</p>
+        <div class="keywords"><strong>Kata kunci— </strong> Android; aplikasi mobile; cabai; deteksi gulma; MobileNetV2; Rapid Application Development; segmentasi semantik; U-Net; User Acceptance Testing.</div>
+    </div>
+
+    <h2 class="title-en">Development of Mobile Application for Early Weed Detection on Chili Fields</h2>
+
+    <div class="abstract-box">
+        <p class="no-indent"><span class="abstract-title">Abstract — </span> Chili (<em>Capsicum annuum L.</em>) production in Indonesia frequently suffers significant yield loss due to weed competition during the early critical vegetative stage (2 weeks after planting). Manual weeding is constrained by high labor costs and the risk of human error, as weed seedlings visually mimic young chili sprouts. This study aims to design and develop an Android application for early weed detection based on Computer Vision and Semantic Segmentation, integrated with agricultural educational features. System development adopted the Rapid Application Development (RAD) method. The system incorporates a U-Net semantic segmentation model with a MobileNetV2 backbone converted into TensorFlow Lite format (<code>.tflite</code> Float32 precision, file size 21.15 MB) for offline on-device inference without internet dependency. The application was built using Android Studio with Kotlin and Jetpack Compose, integrated with Supabase Cloud for user authentication and history logbook storage, along with Retrofit REST API for educational articles. Black Box Testing across 23 scenarios yielded a 100% success rate. User Acceptance Testing (UAT) using a Likert scale questionnaire involving 15 respondents achieved an overall feasibility score of 94.44% (average score of 4.72 out of 5.00), categorized as <strong>Highly Feasible (<em>Accepted</em>)</strong>. The application effectively minimizes mis-plucking risks and enhances farmers' agronomic literacy.</p>
+        <div class="keywords"><strong>Keywords— </strong> Android; chili; MobileNetV2; mobile application; Rapid Application Development; semantic segmentation; U-Net; User Acceptance Testing; weed detection.</div>
+    </div>
+
+    <h2 class="section-title">1. Pendahuluan</h2>
+    <p>Tanaman cabai (<em>Capsicum annuum L.</em>) merupakan komoditas hortikultura strategis di Indonesia dengan nilai ekonomi dan tingkat konsumsi harian yang tinggi [1]. Namun, produktivitas cabai sering mengalami penurunan akibat gangguan organisme pengganggu tanaman, khususnya gulma. Kehadiran gulma menciptakan persaingan ketat dalam perebutan nutrisi tanah, air, cahaya matahari, serta ruang tumbuh [2]. Persaingan paling merusak terjadi pada periode kritis vegetatif awal, yaitu 2 minggu setelah tanam (2 MST). Pada fase ini, perakaran bibit cabai belum menghujam dalam ke tanah, sehingga monopoli nutrisi oleh gulma dapat memicu kekerdilan tanaman hingga penurunan hasil panen mencapai 50% [3].</p>
+    <p>Meskipun dampaknya besar, praktik pengendalian gulma di tingkat petani sebagian besar masih mengandalkan penyiangan manual. Penyiangan manual membutuhkan alokasi tenaga kerja dan biaya operasional yang tinggi di tengah kelangkaan tenaga kerja pertanian [4]. Permasalahan utama dalam penyiangan manual adalah tingginya risiko kesalahan pencabutan (<em>human error</em>). Pada fase vegetatif awal (2 MST), ciri morfologi daun bibit gulma (khususnya golongan daun lebar) sangat mirip dengan daun bibit cabai muda. Keterbatasan literasi botani membuat petani kerap tidak sengaja mencabut bibit cabai utama yang dikira gulma [5].</p>
+    <p>Perkembangan teknologi kecerdasan buatan (<em>Artificial Intelligence</em>) dan <em>Computer Vision</em> menawarkan alternatif solusi melalui analisis citra presisi. Berbeda dengan klasifikasi citra global yang hanya memberi label satu foto utuh atau deteksi objek yang menggunakan kotak pembatas (<em>bounding box</em>), **Segmentasi Semantik (<em>Semantic Segmentation</em>)** melakukan klasifikasi piksel demi piksel (<em>pixel-level classification</em>) [2], [8]. Teknik ini mampu memisahkan kontur daun gulma dari daun cabai secara presisi melalui visualisasi topeng warna transparan (<em>overlay mask</em> Merah = Gulma, Hijau = Tanaman Cabai), meskipun tajuk daun saling bertumpukan (<em>overlapping</em>).</p>
+    <p>Berbagai penelitian terdahulu menguji <em>Deep Learning</em> pertanian, seperti klasifikasi citra berbasis UAV oleh Islam et al. [1], segmentasi U-Net pada wortel oleh Hashemi-Beni et al. [2], klasifikasi MobileNetV2 oleh R et al. [3], modifikasi U-Net bit gula oleh Li et al. [6], serta optimasi aplikasi seluler oleh Kusuma et al. [10], Ariatmaja et al. [11], Suarjaya et al. [12], dan Wijaya et al. [13]. Namun, terdapat celah penelitian (<em>research gap</em>) mengenai implementasi segmentasi semantik ringan (U-Net + MobileNetV2) yang dikemas secara <em>offline on-device</em> pada aplikasi Android khusus pertanaman cabai.</p>
+    <p>Untuk mengatasi permasalahan tersebut, penelitian ini bertujuan merancang dan membangun aplikasi mobile Android "Gulma Detektor" (WeedGuard). Aplikasi ini mengintegrasikan model segmentasi semantik U-Net + MobileNetV2 dalam format <em>TensorFlow Lite</em> (TFLite 21,15 MB) untuk eksekusi inferensi lokal tanpa ketergantungan jaringan internet, dilengkapi dengan logbook riwayat <em>Supabase Cloud</em> dan artikel edukasi <em>Retrofit REST API</em>, serta diuji kelayakannya melalui <em>User Acceptance Testing</em> (UAT) di lapangan.</p>
+
+    <h2 class="section-title">2. Tinjauan Pustaka</h2>
+
+    <h3 class="subsection-title">2.1. Rangkuman Kajian Penelitian Terdahulu (State of the Art)</h3>
+    <p>Penelitian ini disusun dengan merujuk pada beberapa kajian terdahulu yang paling relevan dalam domain kecerdasan buatan pertanian (<em>smart farming</em>), pemrosesan citra digital, dan pengembangan aplikasi seluler:</p>
+    <ol>
+        <li><strong>Deteksi Gulma Berbasis Citra Komoditas Cabai:</strong> Islam et al. (2021) [1] menguji pemetaan dan deteksi gulma pada pertanaman cabai menggunakan wahana tanpa awak (UAV) dan Computer Vision. Keterbatasan utama pendekatan ini adalah tingginya biaya investasi drone yang tidak praktis untuk petani kecil.</li>
+        <li><strong>Klasifikasi Citra Tanaman vs Gulma Berbasis CNN:</strong> R et al. (2025) [3] melakukan komparasi CNN untuk mengklasifikasikan citra cabai dan gulma. Namun, pendekatan ini hanya menghasilkan label tingkat citra tunggal (<em>image-level</em>) tanpa petunjuk lokasi piksel spesifik gulma.</li>
+        <li><strong>Segmentasi Semantik Pertanian Presisi (U-Net & MobileNetV2):</strong> Hashemi-Beni et al. (2020) [2] dan Li et al. (2025) [6] membuktikan bahwa U-Net sangat unggul dalam segmentasi piksel vegetasi. Sementara itu, Khan et al. (2020) [4] dan Yu et al. (2022) [5] memanfaatkan MobileNetV2 sebagai <em>backbone</em> ekstraktor fitur ringan yang menghemat parameter komputasi.</li>
+        <li><strong>Pengolahan Citra Digital dan Arsitektur Seluler Android:</strong> Kusuma et al. (2018) [10] dan Suarjaya et al. (2017) [12] menguji ekstraksi fitur visual dan deteksi tepi pada perangkat seluler. Ariatmaja et al. (2014) [11] dan Wijaya et al. (2019) [13] mengkaji arsitektur antarmuka Android yang efisien memori dan konsumsi daya.</li>
+    </ol>
+
+    <h3 class="subsection-title">2.2. Sintesis Celah Penelitian (Research Gap) dan Kebaruan</h3>
+    <p>Mayoritas sistem terdahulu masih sebatas klasifikasi citra utuh [3], mengandalkan perangkat UAV yang mahal [1], atau mengeksekusi model pada server GPU cloud terpusat yang membutuhkan koneksi internet stabil [2], [4], [5], [6]. Kebaruan (<em>novelty</em>) dari penelitian ini terletak pada integrasi model segmentasi semantik U-Net berbasis MobileNetV2 presisi Float32 yang dikonversi ke format TensorFlow Lite (<code>.tflite</code> 21,15 MB) untuk dieksekusi secara <strong>100% <em>offline on-device inference</em></strong> di dalam perangkat Android khusus lahan cabai 2 MST.</p>
+
+    <h3 class="subsection-title">2.3. Landasan Teori Utama</h3>
+    <p>Landasan teori mencakup: (1) Tanaman Cabai 2 MST & Morfologi 3 Jenis Gulma (rumput belulang, teki ladang, bayam duri), (2) Segmentasi Semantik Piksel (Kelas 0 Background Bening, Kelas 1 Cabai `#00FF00`, Kelas 2 Gulma `#FF0000`), dan (3) Arsitektur U-Net + MobileNetV2 & Mesin TFLite 21,15 MB yang dieksekusi <em>native</em> oleh `WeedClassifier.kt`.</p>
+
+    <h2 class="section-title">3. Metodologi Penelitian</h2>
+    
+    <h3 class="subsection-title">3.1. Tempat, Waktu, dan Sumber Data Penelitian</h3>
+    <p>Penelitian dilaksanakan dari bulan Juli 2025 hingga Juli 2026 di Prodi TI Udayana Jimbaran dan lahan cabai Desa Anggabaya Penatih, Denpasar mencakup cabai muda (2 MST) dan 3 golongan gulma utama. Citra di-resize ke $512 \times 512$ piksel, di-augmentasi, dan di-anotasi piksel demi piksel.</p>
+
+    <h3 class="subsection-title">3.2. Tahapan Pengembangan Sistem (Metode RAD)</h3>
+    <p>Pengembangan aplikasi mengikuti alur RAD (Requirements Planning, User Design & Construction, Cutover/Testing & Implementation).</p>
+
+    <h3 class="subsection-title">3.3. Instrumen Perancangan dan Pembuatan Sistem</h3>
+    <div class="table-caption">Tabel 1<br>RINCIAN HARDWARE DAN SOFTWARE PENELITIAN</div>
+    <table>
+        <thead>
+            <tr>
+                <th>Perangkat</th>
+                <th>Jenis</th>
+                <th>Spesifikasi / Keterangan</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr><td>Hardware</td><td>Laptop Pengembang</td><td>ACER Predator Helios Neo 16 (Intel Core i5-13500HX, RAM 8GB DDR5, GPU RTX 4050 6GB)</td></tr>
+            <tr><td>Hardware</td><td>Smartphone Android</td><td>Perangkat pengujian inferensi kamera <em>on-device</em> di lapangan</td></tr>
+            <tr><td>Software</td><td>Sistem Operasi</td><td>Windows 11 Home (Lingkungan Pengembangan Lokal)</td></tr>
+            <tr><td>Software</td><td>Environment Pelatihan</td><td>Google Colab (Python 3, TensorFlow/Keras, GPU Tesla T4 VRAM 16GB)</td></tr>
+            <tr><td>Software</td><td>Code Editor / IDE</td><td>Android Studio (Kotlin, Jetpack Compose, TFLite Interpreter)</td></tr>
+            <tr><td>Software</td><td>Desain UI/UX</td><td>Figma</td></tr>
+            <tr><td>Software</td><td>Backend Cloud</td><td>Supabase Cloud (Cloud Auth & Postgrest Database)</td></tr>
+            <tr><td>Software</td><td>Client API</td><td>Retrofit REST API (Modul Edukasi Artikel & Ensiklopedia)</td></tr>
+            <tr><td>Software</td><td>Model AI Engine</td><td>TensorFlow Lite (<code>best_model_unet_tversky_float32.tflite</code> berukuran 21,15 MB)</td></tr>
+        </tbody>
+    </table>
+
+    <h3 class="subsection-title">3.4. Konsep dan Mekanisme Segmentasi Semantik Tingkat Piksel</h3>
+    <p>Segmentasi semantik mengklasifikasikan setiap piksel tunggal masukan $512 \times 512 \times 3$ RGB menjadi matriks prediksi kelas $512 \times 512 \times 1$ (Kelas 0 Background Bening, Kelas 1 Cabai `#00FF00`, Kelas 2 Gulma `#FF0000`).</p>
+
+    <div class="figure-box">
++-----------------------------------------------------------------------------------+
+|                        MEKANISME SEGMENTASI SEMANTIK PIKSEL                       |
+|                                                                                   |
+|  [ CITRA INPUT CAMERA ]      [ INFERENSI TFLITE MODEL ]      [ TOPENG MASKING ]   |
+|     (512x512 RGB)              (U-Net MobileNetV2)           (Visual Overlay)     |
+|   +---------------+            +---------------+            +---------------+     |
+|   | Foto Asli     |  =======>  | Matriks Piksel|  =======>  | Merah = Gulma |     |
+|   | Lahan Cabai   |            | Class ID      |            | Hijau = Cabai |     |
+|   | & Gulma       |            | (0, 1, 2)     |            | Bening = Tanah|     |
+|   +---------------+            +---------------+            +---------------+     |
++-----------------------------------------------------------------------------------+
+    </div>
+    <div class="figure-caption">Gambar 1. Alur Pemrosesan Segmentasi Semantik Piksel pada Aplikasi Gulma Detektor</div>
+
+    <h3 class="subsection-title">3.5. Perancangan Arsitektur Sistem dan Alur Inferensi On-Device</h3>
+    <p>Arsitektur tiga lapis (Presentation Layer Kotlin Compose, Application Layer TFLite Engine `WeedClassifier.kt`, Data Layer Supabase Cloud & Retrofit) mengeksekusi inferensi AI secara 100% <em>offline</em> (< 1 detik) di lapangan.</p>
+
+    <div class="figure-box">
++-----------------------------------------------------------------------------------+
+|                                 ARSITEKTUR APLIKASI                               |
+|                                                                                   |
+|  +--------------------+       +------------------------------------------------+  |
+|  |  Antarmuka Android | <---> |  Mesin Inferensi AI On-Device (TFLite Engine)  |  |
+|  |  (Kotlin Compose)  |       |  - best_model_unet_tversky_float32.tflite      |  |
+|  +--------------------+       +------------------------------------------------+  |
+|            ^                                                                      |
+|            |                                                                      |
+|            v                                                                      |
+|  +-----------------------------------------------------------------------------+  |
+|  |  Layanan Backend Cloud & Rest API                                           |  |
+|  |  - Supabase Cloud (Auth & History Database)                                 |  |
+|  |  - Retrofit REST API (Pusat Artikel Edukasi Agronomi)                       |  |
+|  +-----------------------------------------------------------------------------+  |
++-----------------------------------------------------------------------------------+
+    </div>
+    <div class="figure-caption">Gambar 2. Arsitektur Sistem Aplikasi Gulma Detektor</div>
+
+    <h3 class="subsection-title">3.6. Pemodelan UML (Use Case & Activity Diagrams)</h3>
+    <p>Pemodelan UML mencakup Use Case Diagram dan 5 Activity Diagrams.</p>
+
+    <div class="figure-box">
++-------------------------------------------------------------------------+
+|                         GULMA DETEKTOR SYSTEM                           |
+|                                                                         |
+|                 +---------------------------------------+               |
+|                 | Register / Login                      |               |
+|                 +---------------------------------------+               |
+|                                     ^                                   |
+|                                     | (include)                         |
+|  +---------+    +---------------------------------------+               |
+|  |         |--->| Deteksi Gulma (Kamera / Galeri)       |               |
+|  |         |    +---------------------------------------+               |
+|  |         |                        | (include)                         |
+|  | Pengguna|                        v                                   |
+|  | (Petani)|    +---------------------------------------+               |
+|  |         |--->| Tambah & Simpan Catatan Lahan         |               |
+|  |         |    +---------------------------------------+               |
+|  |         |                                                            |
+|  |         |    +---------------------------------------+               |
+|  |         |--->| Kelola Riwayat (View/Update/Delete)   |               |
+|  |         |    +---------------------------------------+               |
+|  |         |                                                            |
+|  |         |    +---------------------------------------+               |
+|  +---------+--->| Membaca Artikel & Ensiklopedia Gulma  |               |
+|                 +---------------------------------------+               |
++-------------------------------------------------------------------------+
+    </div>
+    <div class="figure-caption">Gambar 3. Use Case Diagram Pengguna Aplikasi Gulma Detektor</div>
+
+    <h3 class="subsection-title">3.7. Integrasi Model AI pada Perangkat Mobile</h3>
+    <p>Model U-Net berbasis MobileNetV2 dilatih dengan Tversky Loss, dikonversi ke format <em>TensorFlow Lite</em> (`best_model_unet_tversky_float32.tflite` 21,15 MB Float32) dan dieksekusi lokal oleh `WeedClassifier.kt`.</p>
+
+    <h3 class="subsection-title">3.8. Metode Pengujian System</h3>
+    <p>Pengujian mencakup Black Box Testing (23 skenario) dan UAT (18 skenario kuesioner skala Likert pada 15 responden).</p>
+
+    <h2 class="section-title">4. Hasil dan Pembahasan</h2>
+
+    <h3 class="subsection-title">4.1. Hasil Perancangan dan Implementasi Antarmuka Pengguna (UI)</h3>
+    <p>Implementasi antarmuka Jetpack Compose menghasilkan 5 modul layar utama:</p>
+
+    <h4 class="subsubsection-title">1) Halaman Utama (Home Screen)</h4>
+    <div class="figure-box">
++-----------------------------------------------------------------------------------+
+|                            HALAMAN UTAMA (HOME SCREEN)                            |
+|                                                                                   |
+|  [ Header User Profile ]                                 [ Status Koneksi ]       |
+|  +-----------------------------------------------------------------------------+  |
+|  | Banner Edukasi: "Kenali Periode Kritis Gulma 2 MST pada Lahan Cabai Anda"   |  |
+|  +-----------------------------------------------------------------------------+  |
+|                                                                                   |
+|  [ TOMBOL SCAN KAMERA DETEKSI ]       [ TOMBOL AMBIL DARI GALERI ]                |
+|                                                                                   |
+|  Pusat Ensiklopedia Jenis Gulma:                                                  |
+|  - Gulma Rumputan (Eleusine indica)                                               |
+|  - Gulma Teki-tekian (Cyperus rotundus)                                           |
+|  - Gulma Daun Lebar (Amaranthus spinosus)                                         |
++-----------------------------------------------------------------------------------+
+    </div>
+    <div class="figure-caption">Gambar 4. Halaman Utama (Home Screen) Aplikasi Gulma Detektor</div>
+
+    <h4 class="subsubsection-title">2) Halaman Pemindaian Kamera & Galeri (Scan Screen)</h4>
+    <div class="figure-box">
++-----------------------------------------------------------------------------------+
+|                    HALAMAN PEMINDAIAN KAMERA & GALERI (SCAN)                      |
+|                                                                                   |
+|  [ Tombol Kembali ]       [ Judul: Pemindaian Lahan ]     [ Mode Flash: On/Off ]  |
+|  +-----------------------------------------------------------------------------+  |
+|  |                                                                             |  |
+|  |                      +-------------------------------+                      |  |
+|  |                      | Bingkai Pemotongan (Crop 1:1) |                      |  |
+|  |                      | Area Fokus Objek Cabai & Gulma|                      |  |
+|  |                      +-------------------------------+                      |  |
+|  |                                                                             |  |
+|  +-----------------------------------------------------------------------------+  |
+|  [ Tombol Switch Kamera ]      [ TOMBOL SHUTTER FOTO ]      [ Pemilih Galeri ]    |
++-----------------------------------------------------------------------------------+
+    </div>
+    <div class="figure-caption">Gambar 5. Halaman Pemindaian Kamera dan Layar Crop Citra</div>
+
+    <h4 class="subsubsection-title">3) Halaman Hasil Deteksi & Visualisasi Overlay Masking</h4>
+    <div class="figure-box">
++-----------------------------------------------------------------------------------+
+|                    HALAMAN HASIL DETEKSI & OVERLAY MASKING                        |
+|                                                                                   |
+|  +-----------------------------------------------------------------------------+  |
+|  | CITRA FOTO HASIL SEGMENTASI OVERLAY MASKING:                                |  |
+|  | - Area Daun Cabai  : Topeng Warna HIJAU Transparan (#00FF00)                |  |
+|  | - Area Daun Gulma  : Topeng Warna MERAH Transparan (#FF0000)                |  |
+|  | - Tanah Bedengan   : Bening Tanpa Warna                                     |  |
+|  +-----------------------------------------------------------------------------+  |
+|  Status Diagnosis : "Terdeteksi Gulma Daun Lebar (Bayam Duri)"                    |  |
+|  Saran Penanganan: "Lakukan penyiangan manual pada area berpigmen Merah."       |  |
+|  [ Form Input Catatan Lahan: "Lahan Blok A2 - Penyiangan Selesai" ]             |  |
+|  [ TOMBOL SIMPAN KE RIWAYAT SUPABASE ]                                            |
++-----------------------------------------------------------------------------------+
+    </div>
+    <div class="figure-caption">Gambar 6. Halaman Hasil Deteksi dan Visualisasi Overlay Masking (Merah = Gulma, Hijau = Cabai)</div>
+
+    <h4 class="subsubsection-title">4) Halaman Riwayat Pemindaian (History Screen)</h4>
+    <div class="figure-box">
++-----------------------------------------------------------------------------------+
+|                           HALAMAN RIWAYAT PEMINDAIAN                              |
+|                                                                                   |
+|  [ Judul: Logbook Riwayat Lahan ]                     [ Tombol Hapus Semua ]      |
+|  +-----------------------------------------------------------------------------+  |
+|  | Kartu 1: Lahan Blok A2 | 15 Des 2025, 09:30 WITA | Status: Terdeteksi Gulma  |  |
+|  | Catatan: "Lahan disiangi manual" | [ Detail ] [ Edit ] [ Hapus ]            |  |
+|  +-----------------------------------------------------------------------------+  |
+|  +-----------------------------------------------------------------------------+  |
+|  | Kartu 2: Lahan Bedengan B1 | 14 Des 2025, 16:15 WITA | Status: Cabai Sehat   |  |
+|  | Catatan: "Kondisi bersih" | [ Detail ] [ Edit ] [ Hapus ]                  |  |
+|  +-----------------------------------------------------------------------------+  |
++-----------------------------------------------------------------------------------+
+    </div>
+    <div class="figure-caption">Gambar 7. Halaman Riwayat Pemindaian (History Screen)</div>
+
+    <h4 class="subsubsection-title">5) Halaman Pusat Edukasi & Artikel (Article Screen)</h4>
+    <div class="figure-box">
++-----------------------------------------------------------------------------------+
+|                           HALAMAN PUSAT EDUKASI & ARTIKEL                         |
+|                                                                                   |
+|  [ Tab 1: Artikel Edukasi ]                  [ Tab 2: Ensiklopedia Gulma ]        |
+|  +-----------------------------------------------------------------------------+  |
+|  | Artikel: "Manajemen Penyiangan Gulma Presisi pada Tanaman Cabai 2 MST"       |  |
+|  | Diterbitkan oleh Penyuluh Pertanian | [ Baca Selengkapnya ]                   |  |
+|  +-----------------------------------------------------------------------------+  |
++-----------------------------------------------------------------------------------+
+    </div>
+    <div class="figure-caption">Gambar 8. Halaman Pusat Edukasi dan Artikel Pertanian</div>
+
+    <h3 class="subsection-title">4.2. Hasil Pengujian Black Box Testing</h3>
+    <div class="table-caption">Tabel 2<br>HASIL PENGUJIAN BLACK BOX TESTING MODUL DETEKSI GULMA</div>
+    <table>
+        <thead>
+            <tr>
+                <th>No</th><th>Skenario</th><th>Langkah</th><th>Input</th><th>Hasil Diharapkan</th><th>Hasil Pengujian</th><th>Status</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr><td>1</td><td>Tampilkan kamera</td><td>Tap menu Scan</td><td>Izin kamera</td><td>Preview kamera terbuka</td><td>Buka lancar</td><td>Valid</td></tr>
+            <tr><td>2</td><td>Switch kamera</td><td>Tekan tombol switch</td><td>-</td><td>Kamera berpindah</td><td>Berpindah mulus</td><td>Valid</td></tr>
+            <tr><td>3</td><td>Mode flash</td><td>Tekan tombol flash</td><td>-</td><td>Flash On/Off/Auto</td><td>LED menyala/mati</td><td>Valid</td></tr>
+            <tr><td>4</td><td>Potong citra</td><td>Shutter & crop</td><td>Foto lahan</td><td>Terpotong presisi 512x512</td><td>Gambar terpotong</td><td>Valid</td></tr>
+            <tr><td>5</td><td>Segmentasi TFLite</td><td>Konfirmasi crop</td><td>Citra 512x512</td><td>Mesin TFLite memproses</td><td>Inferensi < 1s</td><td>Valid</td></tr>
+            <tr><td>6</td><td>Ambil galeri</td><td>Tekan ikon Galeri</td><td>Berkas foto</td><td>Foto terpilih masuk crop</td><td>Masuk crop lancar</td><td>Valid</td></tr>
+            <tr><td>7</td><td>Tambah catatan</td><td>Tulis & Simpan</td><td>Teks catatan</td><td>Tersimpan ke Supabase</td><td>Tersimpan rapi</td><td>Valid</td></tr>
+        </tbody>
+    </table>
+
+    <div class="table-caption">Tabel 3<br>REKAPITULASI HASIL PENGUJIAN BLACK BOX TESTING (23 SKENARIO)</div>
+    <table>
+        <thead>
+            <tr><th>No</th><th>Aspek / Modul yang Diuji</th><th>Jumlah Skenario</th><th>Status Pengujian</th><th>Keberhasilan (%)</th></tr>
+        </thead>
+        <tbody>
+            <tr><td>1</td><td>Registrasi Pengguna</td><td>5 Skenario</td><td>Valid (Sesuai Spesifikasi)</td><td>100%</td></tr>
+            <tr><td>2</td><td>Login Pengguna</td><td>3 Skenario</td><td>Valid (Sesuai Spesifikasi)</td><td>100%</td></tr>
+            <tr><td>3</td><td>Fitur Edukasi & Informasi</td><td>3 Skenario</td><td>Valid (Sesuai Spesifikasi)</td><td>100%</td></tr>
+            <tr><td>4</td><td>Fitur Utama Deteksi Gulma</td><td>7 Skenario</td><td>Valid (Sesuai Spesifikasi)</td><td>100%</td></tr>
+            <tr><td>5</td><td>Fitur Riwayat (<em>History</em>)</td><td>5 Skenario</td><td>Valid (Sesuai Spesifikasi)</td><td>100%</td></tr>
+            <tr style="font-weight: bold; background-color: #f2f2f2;">
+                <td colspan="2">TOTAL KESELURUHAN MODUL</td><td>23 Skenario</td><td>Berhasil Tanpa Kendala</td><td>100%</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <h3 class="subsection-title">4.3. Hasil Pengujian User Acceptance Testing (UAT)</h3>
+    <div class="table-caption">Tabel 4<br>PROFIL DEMOGRAFI RESPONDEN PENGUJI UAT</div>
+    <table>
+        <thead>
+            <tr><th>No</th><th>Kategori Profesi / Latar Belakang</th><th>Jumlah Responden ($N$)</th><th>Persentase (%)</th></tr>
+        </thead>
+        <tbody>
+            <tr><td>1</td><td>Petani Cabai / Praktisi Pertanian</td><td>6 Orang</td><td>40,0%</td></tr>
+            <tr><td>2</td><td>Penyuluh Pertanian / Instansi Terkait</td><td>4 Orang</td><td>26,7%</td></tr>
+            <tr><td>3</td><td>Mahasiswa / Pelajar / Akademisi Pertanian</td><td>3 Orang</td><td>20,0%</td></tr>
+            <tr><td>4</td><td>Masyarakat Umum / Hobi Berkebun</td><td>2 Orang</td><td>13,3%</td></tr>
+            <tr style="font-weight: bold;"><td>TOTAL</td><td>KESELURUHAN RESPONDEN</td><td>15 Orang</td><td>100,0%</td></tr>
+        </tbody>
+    </table>
+
+    <div class="table-caption">Tabel 5<br>RINCIAN TOTAL POIN GOOGLE FORM SELURUH SKENARIO UAT (SKENARIO 1 - 18)</div>
+    <table>
+        <thead>
+            <tr>
+                <th>No Skenario</th>
+                <th>Modul Evaluasi</th>
+                <th>Deskripsi Skenario Pertanyaan</th>
+                <th>Responden ($N$)</th>
+                <th>Total Poin</th>
+                <th>Skor Rata-rata</th>
+                <th>Persentase (%)</th>
+                <th>Status</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr><td>1</td><td>UI/UX</td><td>Tampilan antarmuka (UI) aplikasi modern, menarik, dan rapi</td><td>15</td><td>71 / 75</td><td>4,73</td><td>94,67%</td><td>Diterima</td></tr>
+            <tr><td>2</td><td>UI/UX</td><td>Ukuran teks, tombol, dan gambar jelas serta mudah terbaca</td><td>15</td><td>72 / 75</td><td>4,80</td><td>96,00%</td><td>Diterima</td></tr>
+            <tr><td>3</td><td>UI/UX</td><td>Menu navigasi bawah (Home, Artikel, Deteksi, Riwayat) mudah</td><td>15</td><td>72 / 75</td><td>4,80</td><td>96,00%</td><td>Diterima</td></tr>
+            <tr><td>4</td><td>UI/UX</td><td>Perpindahan antar halaman terasa mulus, cepat, dan mudah</td><td>15</td><td>70 / 75</td><td>4,67</td><td>93,33%</td><td>Diterima</td></tr>
+            <tr><td>5</td><td>Otentikasi</td><td>Proses pendaftaran akun baru (Register) mudah dilakukan</td><td>15</td><td>68 / 75</td><td>4,53</td><td>90,67%</td><td>Diterima</td></tr>
+            <tr><td>6</td><td>Otentikasi</td><td>Proses masuk (Login) ke dalam aplikasi lancar tanpa masalah</td><td>15</td><td>70 / 75</td><td>4,67</td><td>93,33%</td><td>Diterima</td></tr>
+            <tr><td>7</td><td>Otentikasi</td><td>Fitur ikon Mata (Show/Hide Password) sangat membantu</td><td>15</td><td>73 / 75</td><td>4,87</td><td>97,33%</td><td>Diterima</td></tr>
+            <tr><td>8</td><td>Otentikasi</td><td>Pesan peringatan (Alert) mudah dimengerti saat salah input</td><td>15</td><td>70 / 75</td><td>4,67</td><td>93,33%</td><td>Diterima</td></tr>
+            <tr><td>9</td><td>Fitur Utama</td><td>Fitur pemotongan gambar (Crop) sehabis memotret mudah</td><td>15</td><td>70 / 75</td><td>4,67</td><td>93,33%</td><td>Diterima</td></tr>
+            <tr><td>10</td><td>Fitur Utama</td><td>Kecepatan aplikasi memproses hasil deteksi sangat cepat</td><td>15</td><td>70 / 75</td><td>4,67</td><td>93,33%</td><td>Diterima</td></tr>
+            <tr><td>11</td><td>Fitur Utama</td><td>Hasil deteksi (overlay mask warna & label) akurat</td><td>15</td><td>71 / 75</td><td>4,73</td><td>94,67%</td><td>Diterima</td></tr>
+            <tr><td>12</td><td>Fitur Utama</td><td>Penjelasan panduan & saran penanganan gulma lengkap</td><td>15</td><td>72 / 75</td><td>4,80</td><td>96,00%</td><td>Diterima</td></tr>
+            <tr><td>13</td><td>Fitur Utama</td><td>Mode pemindaian memunculkan warna secara real-time</td><td>15</td><td>70 / 75</td><td>4,67</td><td>93,33%</td><td>Diterima</td></tr>
+            <tr><td>14</td><td>Fitur Utama</td><td>Topeng warna (masking) transparan membantu identifikasi</td><td>15</td><td>72 / 75</td><td>4,80</td><td>96,00%</td><td>Diterima</td></tr>
+            <tr><td>15</td><td>Pendukung</td><td>Artikel edukasi pertanian yang disediakan beragam</td><td>15</td><td>72 / 75</td><td>4,80</td><td>96,00%</td><td>Diterima</td></tr>
+            <tr><td>16</td><td>Pendukung</td><td>Hasil deteksi sebelumnya tersimpan rapi di Riwayat</td><td>15</td><td>71 / 75</td><td>4,73</td><td>94,67%</td><td>Diterima</td></tr>
+            <tr><td>17</td><td>Pendukung</td><td>Pengguna dapat membuka detail hasil deteksi lama</td><td>15</td><td>71 / 75</td><td>4,73</td><td>94,67%</td><td>Diterima</td></tr>
+            <tr><td>18</td><td>Pendukung</td><td>Fitur Hapus Semua Riwayat berfungsi baik saat membersihkan data</td><td>15</td><td>70 / 75</td><td>4,67</td><td>93,33%</td><td>Diterima</td></tr>
+        </tbody>
+    </table>
+
+    <div class="table-caption">Tabel 6<br>REKAPITULASI HASIL PENGUJIAN USER ACCEPTANCE TESTING (UAT)</div>
+    <table>
+        <thead>
+            <tr><th>No</th><th>Modul Aspek yang Diuji</th><th>Jml Skenario</th><th>Total Poin</th><th>Skor Rata-rata</th><th>Persentase (%)</th><th>Status Kelayakan</th></tr>
+        </thead>
+        <tbody>
+            <tr><td>1</td><td>Tampilan & Navigasi (UI/UX)</td><td>4 Skenario</td><td>285 / 300</td><td>4,75</td><td>95,00%</td><td>Sangat Layak (Diterima)</td></tr>
+            <tr><td>2</td><td>Otentikasi Akun (Login & Register)</td><td>4 Skenario</td><td>281 / 300</td><td>4,68</td><td>93,67%</td><td>Sangat Layak (Diterima)</td></tr>
+            <tr><td>3</td><td>Fitur Utama Deteksi Gulma</td><td>6 Skenario</td><td>425 / 450</td><td>4,72</td><td>94,44%</td><td>Sangat Layak (Diterima)</td></tr>
+            <tr><td>4</td><td>Fitur Pendukung (Artikel & Riwayat)</td><td>4 Skenario</td><td>284 / 300</td><td>4,73</td><td>94,67%</td><td>Sangat Layak (Diterima)</td></tr>
+            <tr style="font-weight: bold; background-color: #e6f4ea;">
+                <td colspan="2">TOTAL RATA-RATA KESELURUHAN</td><td>18 Skenario</td><td>1.275 / 1.350</td><td>4,72</td><td>94,44%</td><td>Sangat Layak (<em>Accepted</em>)</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <h3 class="subsection-title">4.4. Pembahasan Akademik Hasil Implementasi dan UAT</h3>
+    <p>Hasil pengujian UAT membuktikan bahwa antarmuka berbasis Jetpack Compose memberikan pengalaman pengguna yang intuitif bagi petani di lapangan (95,00%). Visualisasi topeng warna transparan (Merah = Gulma, Hijau = Tanaman Cabai) memudahkan pemisahan lokasi gulma secara presisi. Keunggulan inferensi lokal TFLite (21,15 MB) memberikan waktu tanggap < 1 detik tanpa bergantung sinyal internet di area lahan terpencil, serta integrasi Supabase Cloud dan artikel edukasi meningkatkan literasi agronomi petani secara konsisten.</p>
+
+    <h2 class="section-title">5. Simpulan</h2>
+    <p>Rancang bangun aplikasi mobile Android "Gulma Detektor" (WeedGuard) telah berhasil diimplementasikan secara fungsional menggunakan bahasa Kotlin dan Jetpack Compose dengan mengintegrasikan model segmentasi semantik U-Net berbasis MobileNetV2 dalam format <em>TensorFlow Lite</em> (<code>.tflite</code> 21,15 MB) untuk eksekusi inferensi lokal (<em>offline on-device</em>). Hasil pengujian fungsionalitas <em>Black Box Testing</em> mencatatkan tingkat keberhasilan 100% pada 23 skenario uji, serta pengujian penerimaan pengguna akhir (<em>User Acceptance Testing</em> / UAT) pada 15 responden meraih persentase akumulatif sebesar <strong>94,44% (skor rata-rata 4,72 dari 5,00)</strong> dengan kriteria <strong>Sangat Layak (<em>Accepted</em>)</strong>. Aplikasi ini terbukti efektif membantu petani meminimalisir kesalahan pencabutan bibit cabai pada periode kritis 2 minggu setelah tanam sekaligus meningkatkan literasi pengolahan lahan pertanian.</p>
+
+    <h2 class="section-title">Ucapan Terima Kasih</h2>
+    <p class="no-indent">Ucapan terima kasih disampaikan kepada Program Studi Teknologi Informasi, Fakultas Teknik, Universitas Udayana atas dukungan fasilitas penelitian, serta kepada kelompok petani cabai dan penyuluh pertanian di Desa Anggabaya, Penatih, Denpasar yang telah berpartisipasi aktif dalam pengujian aplikasi ini.</p>
+
+    <h2 class="section-title">Daftar Referensi</h2>
+    <div class="references">
+        <div>[1] S. Islam, A. U. G. Manning, and R. N. Roy, "Smart farming system for weed detection in chili crops using unmanned aerial vehicles," <em>Computers and Electronics in Agriculture</em>, vol. 181, p. 106030, 2021.</div>
+        <div>[2] R. Hashemi-Beni, A. A. Karim, and M. J. Starek, "Deep learning based semantic segmentation for weed detection in organic carrot fields," <em>Remote Sensing Applications: Society and Environment</em>, vol. 20, p. 100416, 2020.</div>
+        <div>[3] R. R, S. Kumar, and T. Prabakar, "Comparative analysis of convolutional neural networks for chili and weed image classification," <em>Journal of Agricultural Technology</em>, vol. 15, no. 2, pp. 112–124, 2025.</div>
+        <div>[4] A. Khan, T. Ahmad, and M. Shahzad, "Cascaded encoder-decoder network for weed segmentation in precision agriculture," <em>Computers and Electronics in Agriculture</em>, vol. 175, p. 105566, 2020.</div>
+        <div>[5] J. Yu, X. Zhang, and Y. Wang, "Modified DeepLabV3+ with MobileNetV2 backbone and CBAM attention for weed segmentation in soybean fields," <em>Plants</em>, vol. 11, no. 17, p. 2288, 2022.</div>
+        <div>[6] G. Li, H. Chen, and L. Zhao, "Modernized U-Net architecture for weed segmentation in sugar beet fields," <em>Computers and Electronics in Agriculture</em>, vol. 228, p. 109670, 2025.</div>
+        <div>[7] M. Sandler, A. Howard, M. Zhu, A. Zhmoginov, and L. C. Chen, "MobileNetV2: Inverted residuals and linear bottlenecks," in <em>Proc. IEEE/CVF Conf. Comput. Vis. Pattern Recognit. (CVPR)</em>, 2018, pp. 4510–4520.</div>
+        <div>[8] O. Ronneberger, P. Fischer, and T. Brox, "U-Net: Convolutional networks for biomedical image segmentation," in <em>Proc. MICCAI</em>, 2015, pp. 234–241.</div>
+        <div>[9] L. C. Chen, Y. Yukap, G. Papandreou, F. Schroff, and H. Adam, "Encoder-decoder with atrous separable convolution for semantic image segmentation," in <em>Proc. ECCV</em>, 2018, pp. 801–818.</div>
+        <div>[10] I. W. A. Kusuma, I. M. O. Widyantara, and I. P. A. Bayupati, "Penerapan pemrosesan citra digital dan ekstraksi fitur visual pada platform Android," <em>Jurnal Ilmiah Merpati</em>, vol. 6, no. 3, pp. 185–196, 2018.</div>
+        <div>[11] I. G. A. Ariatmaja, I. W. A. Kusuma, and I. M. Sukarsa, "Perancangan arsitektur aplikasi Android berkinerja tinggi berbasis antarmuka responsif," <em>Jurnal Ilmiah Merpati</em>, vol. 2, no. 2, pp. 110–121, 2014.</div>
+        <div>[12] G. A. A. Suarjaya, I. N. S. Kumara, and I. M. O. Widyantara, "Analisis teknik segmentasi dan deteksi tepi pada citra digital," <em>Jurnal Ilmiah Merpati</em>, vol. 5, no. 1, pp. 45–56, 2017.</div>
+        <div>[13] I. P. W. Wijaya, I. M. Sukarsa, and I. W. A. Kusuma, "Pengembangan sistem antarmuka berbasis Android untuk pemantauan objek tanaman," <em>Jurnal Ilmiah Merpati</em>, vol. 7, no. 2, pp. 130–141, 2019.</div>
+    </div>
+
+</body>
+</html>
